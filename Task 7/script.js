@@ -13,3 +13,11 @@ const items = [
   { id: '3', name: 'James', surname: 'Smith' },
 ];
 
+function transformItems(items) {
+  return items.map(item => ({
+    id: item.id,
+    fullName: `${item.name} ${item.surname}`,
+  }));
+}
+
+console.log(transformItems(items));
