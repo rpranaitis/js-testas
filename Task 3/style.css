@@ -62,10 +62,22 @@
 
 #output {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
   color: rgb(255, 139, 72);
+  gap: 15px;
+}
+
+#output .user-container {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#output img {
+  width: 100%;
 }
 
 #output p {
-  font-style: italic;
+  text-align: center;
 }

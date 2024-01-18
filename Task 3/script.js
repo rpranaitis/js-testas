@@ -22,13 +22,18 @@ showUsersButton.addEventListener('click', async () => {
     if (data) {
         output.innerHTML = '';
         
-        const ol = document.createElement('ol');
-        output.append(ol);
-        
         data.forEach(user => {
-            const li = document.createElement('li');
-            li.textContent = `login: ${user.login}, avatar_url: ${user.avatar_url}`;
-            ol.append(li);
+            const div = document.createElement('div');
+            div.classList.add('user-container');
+            output.append(div);
+
+            const p = document.createElement('p');
+            p.textContent = user.login;
+            div.append(p);
+
+            const img = document.createElement('img');
+            img.src = user.avatar_url;
+            div.append(img);
         });
     }
 });
