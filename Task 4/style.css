@@ -27,3 +27,29 @@
   margin-top: 50px;
   color: #333;
 }
+
+#output {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+}
+
+#output .brand-container {
+  background: rgb(221, 221, 221);
+  width: 200px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#output .brand-container p {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#output .brand-container ul {
+  list-style: none;
+}
