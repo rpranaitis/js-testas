@@ -6,6 +6,27 @@ Sukurkite klasę "AdvancedCalculator" (naudokite ES6), kuri sukuria objektus su 
 4. factorial() - priima vieną skaičių ir grąžina jo faktorialą.
 ------------------------------------------------------------------------------------ */
 
+class AdvancedCalculator {
+    power(base, exponent) {
+      return Math.pow(base, exponent);
+    }
+  
+    squareRoot(number) {
+      return Math.sqrt(number);
+    }
+  
+    modulo(num1, num2) {
+      return num1 % num2;
+    }
+  
+    factorial(number) {
+      if (number === 0 || number === 1) {
+        return 1;
+      } else {
+        return number * this.factorial(number - 1);
+      }
+    }
+}
 
 // Test
 const advancedCalculator = new AdvancedCalculator();
