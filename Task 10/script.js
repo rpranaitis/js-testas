@@ -15,9 +15,61 @@ Metodai: withdraw(amount) - leidžia neigiamą balansą iki nurodyto overdraftLi
 
 ------------------------------------------------------------------------------------ */
 
+class BankAccount {
+    constructor(accountNumber, ownerName, balance) {
+        this.accountNumber = accountNumber;
+        this.ownerName = ownerName;
+        this.balance = balance;
+    }
+
+    deposit(amount) {
+        this.balance += amount;
+    }
+
+    withdraw(amount) {
+        if (amount <= this.balance) {
+            this.balance -= amount;
+        } else {
+            console.log("Not enough funds");
+        }
+    }
+
+    getBalance() {
+        return this.balance;
+    }
+}
+
+class SavingsAccount extends BankAccount {
+    constructor(accountNumber, ownerName, balance, interestRate) {
+        super(accountNumber, ownerName, balance);
+        this.interestRate = interestRate;
+    }
+
+    addInterest() {
+        const interest = (this.balance * this.interestRate) / 100;
+        this.balance += interest;
+    }
+}
+
+class CheckingAccount extends BankAccount {
+    constructor(accountNumber, ownerName, balance, overdraftLimit) {
+        super(accountNumber, ownerName, balance);
+        this.overdraftLimit = overdraftLimit;
+    }
+
+    withdraw(amount) {
+        const potentialBalance = this.balance - amount;
+        if (potentialBalance >= -this.overdraftLimit) {
+            this.balance -= amount;
+        } else {
+            console.log("Exceeds overdraft limit");
+        }
+    }
+}
+
 // Test
-const savings = new SavingsAccount('12345', 'John Doe', 1000, 5);
-const checking = new CheckingAccount('67890', 'Jane Doe', 500, 200);
+const savings = new SavingsAccount("12345", "John Doe", 1000, 5);
+const checking = new CheckingAccount("67890", "Jane Doe", 500, 200);
 
 savings.addInterest();
 console.log(savings.getBalance()); // Rezultatas: 1050
