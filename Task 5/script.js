@@ -15,6 +15,15 @@ const employee = {
   salary: 5000
 };
 
+function getEmployeeFullName(employee) {
+  return `${employee.firstName} ${employee.lastName}`;
+}
+
+function updateEmployeeSalary(employee, salary) {
+  employee.salary = salary;
+
+  return employee;
+}
 
 console.log(getEmployeeFullName(employee)); // Rezultatas: 'John Doe'
 console.log(updateEmployeeSalary(employee, 6000)); // Rezultatas: employee object with updated salary
