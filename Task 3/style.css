@@ -63,6 +63,7 @@
 #output {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   color: rgb(255, 139, 72);
   gap: 15px;
 }
