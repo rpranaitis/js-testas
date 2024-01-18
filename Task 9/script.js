@@ -9,6 +9,17 @@ Metodas:
 isPowerful() - jeigu automobilio horsepower bus didesnis nei 300, tada grąžins true, kitu atveju false 
 ------------------------------------------------------------------------------------------------------ */
 
+class Car {
+    constructor(make, model, horsepower) {
+      this.make = make;
+      this.model = model;
+      this._horsepower = horsepower;
+    }
+  
+    isPowerful() {
+      return this._horsepower > 300;
+    }
+}
 
 // Test
 const car1 = new Car('Toyota', 'Corolla', 150);
