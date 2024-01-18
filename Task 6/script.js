@@ -17,3 +17,29 @@ const products = [
   { id: '4', name: 'Product 4', price: 40, category: 'Electronics' },
   { id: '5', name: 'Product 5', price: 50, category: 'Books' },
 ];
+
+function getAveragePrice(products) {
+  if (products.length === 0) {
+    return 0;
+  }
+
+  const totalPrices = products.reduce((sum, product) => sum + product.price, 0);
+
+  return totalPrices / products.length;
+}
+
+function getProductsNames(products) {
+  return products.map(product => product.name);
+}
+
+function getUniqueCategories(products) {
+  return [...new Set(products.map(product => product.category))];
+}
+
+const averagePrice = getAveragePrice(products);
+const productNames = getProductsNames(products);
+const uniqueCategories = getUniqueCategories(products);
+
+console.log('Vidutinė kaina:', averagePrice);
+console.log('Produktų pavadinimai:', productNames);
+console.log('Unikalios kategorijos:', uniqueCategories);
