@@ -59,3 +59,13 @@
   border-radius: 5px;
   background-color: #fff;
 }
+
+#output {
+  display: flex;
+  justify-content: center;
+  color: rgb(255, 139, 72);
+}
+
+#output p {
+  font-style: italic;
+}
